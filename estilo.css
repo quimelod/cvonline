@@ -1,0 +1,585 @@
+@font-face {
+  font-family: dos;
+  src: url(DOSVGA437Win.ttf);
+}
+@font-face {
+  font-family: dossim;
+  src: url(DOSVGA437.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: chocolate;
+  font-family: 'Inconsolata', monospace;
+font-weight: 600;
+}
+
+html body {
+  text-align: center;
+}
+
+.contenedor {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-left: #887c7c solid 4px;
+  border-right: #887c7c solid 4px;
+  background-color: #000;
+  text-align: center;
+ }
+ aside.perfil {
+   position: fixed;
+   width: 22%;
+   height: 100%;
+   
+ }
+ aside.adicional {
+   display: none;
+   visibility: hidden;
+ }
+header {
+  position: fixed;
+  display: flex;
+  margin-top: 1rem;
+  width: 70%;
+  height: 3rem;
+  left: 26%;
+  background-color: rgb(37, 33, 33);
+  align-items: center;
+  border: rgb(212, 140, 7) solid 2px;
+  border-radius: 2px;
+  
+}
+.logo {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  border-right: peru solid 2px;
+
+}
+.logo div {
+  margin: 1rem 0 1rem 0;
+}
+.typer {
+  width: 100%;
+  height: 30%;
+  /* flex-grow: 1; */
+  border-top: #887c7c solid 2rem;
+  padding-top: 1rem;
+  padding: 2%;
+}
+.typer h4 {
+  width: 90%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.3rem;
+}
+body > div > aside.perfil > div > p {
+  padding: 0.7rem;
+}
+.fotoperfil {
+  display: flex;
+  max-height: 7rem;
+  min-height: 7rem;
+  flex-basis: 7rem;
+  max-width: 7rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  border: rgb(1, 46, 31) groove 8px;
+  overflow: hidden;
+}
+@media screen and (max-height:730px) and (min-width:690px) {
+  .typer {
+    min-height: 16rem;
+  }
+  
+}
+.sele {
+  display: inline!important;
+  background-color: #254cd0;
+  color: azure;
+}
+main {
+  margin-top: 4rem;
+  margin-left: 22%;
+  flex-basis: 70%;
+  flex-grow: 1;
+  padding: 1rem;
+}
+main section {
+  text-align: left;
+  padding-left: 1rem;
+}
+@media screen and (max-width:690px) {
+  .contenedor {
+    flex-wrap: wrap;
+  }
+  header {
+    width: 100%;
+    left: 0%;
+    border-left: none;
+    border-right: none;
+  }
+  aside.perfil {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    top: 5rem;
+    width: 100%;
+    height: 20%;
+  }
+  main div.entero {
+    font-size: 1rem;
+  }
+
+  main {
+    margin-top: 5rem;
+    margin-left: 0;
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .logo {
+    display: flex;
+    width: 100;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border-right: none;
+    border-bottom: peru solid 2px;
+  }
+  
+  .typer {
+    flex-basis: 10%;
+    flex-grow: 1;
+    height: 35%;
+    padding: 2%;
+    border-top: none;
+  }
+  .fotoperfil {
+    display: flex;
+    max-height: 7rem;
+    max-width: 7rem;
+    align-self:center;
+    margin-left: auto;
+    margin-right: 2rem!important;
+    margin-top: 2rem;
+    border-radius: 50%;
+    border: orange dotted 3px;
+    overflow: hidden;
+  }
+
+}
+
+.fotoperfil img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position:top;
+}
+nav {
+  width: 100%;
+  align-content: center;
+}
+.navegacion {
+  width: 100%;
+  margin-bottom: 0!important;
+  padding-left: 0!important;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  list-style: none;
+  align-content: center;
+}
+.resaltar1 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto3 10s infinite 3s;
+}
+.resaltar2 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto3 10s infinite 3.5s;
+}
+.resaltar3 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto3 10s infinite 4s;
+}
+.submenu{
+  position: absolute;
+  padding: 0!important;
+  text-align: left;
+  background: #333333;
+  border-radius: 5px;
+  visibility: hidden;
+  list-style: none;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.submenu li {
+  margin: 2rem;
+}
+.navegacion li a {
+  color: #0d6efd;
+  font-weight:800;
+  text-decoration: none;
+}
+body > div > header > nav > ul > li > ul > li:hover{
+  cursor: pointer;
+  color: rgb(43, 205, 255); 
+  transition: color .2s; 
+}
+
+.navegacion li a:hover{
+  cursor: pointer;
+  color: rgb(43, 205, 255); 
+  transition: color .3s;
+ }
+.oculto {
+  color: #fdf254;
+  padding-right: 1rem;
+  visibility: hidden;
+}
+ .navegacion li a:hover > i{
+  visibility: visible;
+  opacity: 1;
+}
+
+.navegacion li:hover .submenu{
+  visibility: visible;
+  opacity: 1;
+  background: rgb(51, 51, 51, 0.95);
+}
+main h2 {
+  margin: 10px auto;
+}
+main div.entero {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.efecto1 {
+  display: inline;
+	transition: font-weight 2s;
+	animation: efecto 13s infinite;
+}
+.efecto2 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto 13s infinite .5s;
+}
+.efecto3 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto 13s infinite 1.5s;
+}
+.efecto4 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto 13s infinite 4.5s;
+}
+.efecto5 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto 13s infinite 5.8s;
+}
+.efecto6 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto 13s infinite 6.3s;
+}
+.efecto7 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto 13s infinite 7.8s;
+}
+.efecto8 {
+  display: inline;
+  transition: font-weight 2s;
+  animation: efecto2 13s infinite 10.8s;
+}
+
+.trabajos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+.itemtrabajos {
+  display: flex;
+  flex-basis: 200px;
+  flex-grow: 1;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  border: orangered solid 1px;
+  border-radius: 8px;
+  flex-direction: column;
+}
+.itemtrabajos h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+
+}
+.imagentrabajo {
+  width: 100%;
+  height: 200px;
+  margin: 0px 0px 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.imagentrabajo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+.desc {
+  height: 80px;
+  overflow:auto;
+  border:rgba(105, 105, 105) solid 1px;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.aprendizaje {
+  list-style: none;
+  padding-left: 0!important;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.aprendizaje li {
+  font-family: dossim;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.aprendizaje li div.completo {
+  display: inline;
+  color: #faec22;
+  background-color: blue;
+  font-family: dos;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.aprendizaje li div.comenzando {
+  display: inline;
+  color: #faec22;
+  background-color: rgb(18, 145, 24);
+  font-family: dos;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.aprendizaje li div.espera {
+  display: inline;
+  color: #faec22;
+  background-color: rgb(223, 16, 16);
+  font-family: dos;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.espera a {
+  text-decoration: none;
+}
+.videos {
+  margin: 1rem 0 1rem 0;
+  border: yellow solid 1px;
+}
+.ulvideos {
+  list-style: none;
+  text-align: left;
+}
+
+.form_contact{
+  text-align: center;
+  box-shadow: 0px 0px 20px 5px #AAA;
+  border-radius: 10px;
+  width: 85%;
+  max-width: 300px;
+  height: 500px;
+  margin: 30px auto 60px auto;
+  padding: 10px 10px;
+  animation: bounce 1.5s infinite;
+}
+.form_contact input:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px 5px #666;
+}
+.form_contact textarea:focus {
+  box-shadow: 0px 0px 10px 5px #666;
+  outline: none;
+}
+.form_contact input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: teal solid 2px;
+}
+.form_contact label {
+  margin-top: 0.5rem;
+}
+.form_contact textarea {
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: teal solid 2px;
+  border-radius: 5px;
+  height: 7rem;
+  width: 80%;
+  resize: none;
+}
+.nombre {
+  width:80%;
+}
+.telefono {
+  width:70%;
+}
+.mail {
+  width:80%;
+}
+.enviar {
+  border: teal solid 2px!important;
+  margin-top: 0.8rem;
+  padding: 3px;
+}
+::-webkit-input-placeholder{
+  color: #666;
+  font-size: 0.5rem;
+}
+.alpie {
+  position:absolute;
+  width: 100%;
+  bottom: 0px;
+  background-color: #000;
+  height: 2.8rem;
+}
+.delpie {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  font-size: 0.7rem;
+}
+.delpie i {
+  color:orange;
+  animation: efecto2 3s infinite;
+  font-size: 2rem;
+ }
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  border-top: orange solid 2px;
+  border-bottom: orange solid 2px;
+  background-color: rgba(105, 105, 105,0.7);
+  z-index: 10;
+}
+
+
+@keyframes bounce{
+  0%{
+  }
+  50%{
+    transform: translate(0, 8px);
+  }
+}
+@keyframes shadow{
+  0%{
+  }
+  50%{
+    opacity: 0.8;
+    width: 50%;
+  }
+}
+
+@keyframes efecto {
+  0% {
+    	font-weight: 100;
+  }
+  8.0%{
+    font-weight: bold;
+    color: #483d8b;
+  }
+  8.5% {
+    	font-weight: 100;
+  }
+  9.0% {
+    font-weight: bold;
+  }
+  9.5% {
+    font-weight: 100;
+    color: #483d8b;
+  }
+  9.8% {
+    font-weight: bold;
+    color: chocolate;
+  }
+  100% {
+    font-weight: bold;
+  }
+}
+
+@keyframes efecto2 {
+    0% {
+    	font-weight: 100;
+    }
+    8.0%{
+    	font-weight: bold;
+    	color: #faec22;
+    }
+    8.5% {
+    	font-weight: 100;
+    }
+    9.0% {
+    	font-weight: bold;
+    }
+    9.5% {
+    	font-weight: 100;
+      color: #faec22;
+    }
+    9.8% {
+    	font-weight: bold;
+      color: chocolate;
+    }
+
+    100% {
+      font-weight: 200;
+    }
+}
+@keyframes efecto3 {
+    0% {
+    	font-weight: 100;
+    }
+    8.0%{
+    	font-weight: 200;
+    	color: #faec22;
+    }
+    8.5% {
+    	font-weight: 100;
+    }
+    9.0% {
+    	font-weight: 200;
+    }
+    9.5% {
+    	font-weight: 100;
+      color: #faec22;
+    }
+    9.8% {
+    	font-weight: 800;
+      color: #0d6efd;
+    }
+
+    100% {
+      font-weight: 800;
+    }
+}
